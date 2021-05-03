@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+.profilePic {
+  border-radius: 50%;
+}

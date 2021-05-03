@@ -17,7 +17,8 @@ function App() {
     setProfile({
       login: json.login,
       followers: json.followers,
-      publicRepos: json.public_repos
+      publicRepos: json.public_repos,
+      avatar: json.avatar_url
 
 
     })
@@ -35,6 +36,7 @@ function App() {
       <header className="App-header">
         <h2>Fetch Data</h2>
         <h3>{profile.login}</h3>
+        <img  clasName="profilePic" src={profile.avatar} style={{borderRadius:50 + "%"}}/>
         <h3>{`followers: ${profile.followers}, repos: ${profile.publicRepos}`}</h3>
       </header>
     </div>
