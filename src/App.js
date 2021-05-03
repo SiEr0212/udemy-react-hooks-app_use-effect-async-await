@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 const initProfile = {
+  login:'',
   followers: null,
   publicRepos: null,
 };
@@ -14,8 +15,10 @@ function App() {
     const json = await response.json();
 
     setProfile({
+      login: json.login,
       followers: json.followers,
       publicRepos: json.public_repos
+
 
     })
 
@@ -31,7 +34,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>Fetch Data</h2>
-        <h3>{}</h3>
+        <h3>{profile.login}</h3>
+        <h3>{`followers: ${profile.followers}, repos: ${profile.publicRepos}`}</h3>
       </header>
     </div>
   );
